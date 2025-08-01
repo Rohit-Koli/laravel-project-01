@@ -7,6 +7,11 @@ Route::get('/', function () {
     return Inertia::render('welcome');
 })->name('home');
 
+// Route to the about page
+Route::get('/about',function(){
+    return Inertia::render('about');
+})->name('about');
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
         return Inertia::render('dashboard');
